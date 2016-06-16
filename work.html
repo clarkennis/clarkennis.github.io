@@ -14,39 +14,42 @@
 <body>
   <nav class="white" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">
+      <a id="logo-container" href="index.html" class="brand-logo">
           <i class="large material-icons left" style="font-size: 40px;">public</i>
           Clark Ennis
         </a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="work.html">Work</a></li>
+        <li><a href="#">Work</a></li>
         <li><a href="#">Education</a></li>
         <li><a href="#">Personal</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-        <li><a href="work.html">Work</a></li>
+        <li><a href="#">Work</a></li>
         <li><a href="#">Education</a></li>
         <li><a href="#">Personal</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
-
-  <div id="index-banner" class="parallax-container" style="height: 600px;">
+    
+    <div id="index-banner" class="parallax-container" style="height: 300px;">
     <div class="section no-pad-bot">
       <div class="container">
-        <br><br>
-        <div class="row center" style="margin-top: 450px">
-          <a href="mailto:contact@clarkennis.com" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Contact</a>
-        </div>
-        <br><br>
+          <div class="section" style="margin-top: 100px">
 
+        <!--   Carousel Section   -->
+               <div class="carousel">
+                <a class="carousel-item" href="#one!" style="margin-top: 50px"><img src="OSIsoft.png"></a>
+                <a class="carousel-item" href="#two!"><img src="JohnDeere.png"></a>
+                <a class="carousel-item" href="#three!" style="margin-top: 10px"><img src="Caterpillar.png"></a>
+              </div>
+
+    </div>
       </div>
     </div>
     <div class="parallax" style="height: 20px;"><img src="background1.jpg" alt="Unsplashed background img 1"></div>
   </div>
-
 
   <div class="container">
     <div class="section">
@@ -81,20 +84,6 @@
     </div>
   </div>
 
-
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light"><i>"Simplicity is the ultimate sophistication."</i></h5>
-            <br><br>
-            <h5 class="header col s12 light">Leonardo da Vinci</h5>
-        </div>
-      </div>
-    </div>
-    <div class="parallax"><img src="background2.jpg" alt="Unsplashed background img 2"></div>
-  </div>
-
   <footer class="page-footer teal">
     <div class="footer-copyright">
       <div class="container grey-text text-lighten-3">
@@ -109,6 +98,15 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $('.carousel').carousel({
+            });
+
+        });
+    </script>
+    
 
   </body>
 </html>
