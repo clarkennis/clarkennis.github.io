@@ -34,20 +34,20 @@
   </nav>
     
     <div id="index-banner" class="parallax-container" style="height: 300px;">
-    <div class="section no-pad-bot">
-      <div class="container">
-          <div class="section" style="margin-top: 100px">
+        <div class="section no-pad-bot">
+          <div class="container">
+                <div class="section" style="margin-top: 100px">
 
-        <!--   Carousel Section   -->
-               <div class="carousel">
-                <a class="carousel-item" href="#one!" style="margin-top: 50px"><img src="OSIsoft.png"></a>
-                <a class="carousel-item" href="#two!"><img src="JohnDeere.png"></a>
-                <a class="carousel-item" href="#three!" style="margin-top: 10px"><img src="Caterpillar.png"></a>
-              </div>
+            <!--   Carousel Section   -->
+                   <div class="carousel">
+                    <a class="carousel-item" href="#one!" style="margin-top: 50px"><img src="OSIsoft.png"></a>
+                    <a class="carousel-item" href="#two!"><img src="JohnDeere.png"></a>
+                    <a class="carousel-item" href="#three!" style="margin-top: 10px"><img src="Caterpillar.png"></a>
+                  </div>
 
-    </div>
-      </div>
-    </div>
+                </div>
+          </div>
+        </div>
     <div class="parallax" style="height: 20px;"><img src="background1.jpg" alt="Unsplashed background img 1"></div>
   </div>
 
@@ -99,13 +99,16 @@
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
     
-    <script>
+  <script>
         $(document).ready(function(){
             $('.carousel').carousel({
+                dist:-150,
+                shift:50,
+                padding:200,
             });
 
         });
-    </script>
+  </script>
     
 
   </body>
