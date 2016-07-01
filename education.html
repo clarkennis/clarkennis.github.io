@@ -42,9 +42,9 @@
 
             <!--   Carousel Section   -->
                    <div class="carousel">
-                    <a class="carousel-item" href="#one!"><img src="ISU.png"></a>
-                    <a class="carousel-item" href="#two!" style="margin-top: 25px"><img src="JHU.png"></a>
-                    <a class="carousel-item" href="#three!"><img src="NUS.png"></a>
+                    <a class="carousel-item" id="isu" href="#one!"><img src="ISU.png"></a>
+                    <a class="carousel-item" id="jhu" href="#two!" style="margin-top: 25px"><img src="JHU.png"></a>
+                    <a class="carousel-item" id="nus" href="#three!"><img src="NUS.png"></a>
                   </div>
 
                 </div>
@@ -54,14 +54,14 @@
   </div>
 
   <div class="container">
-    <div class="section">
+    <div class="section" id="educationcontent">
 
       <div class="row">
         <div class="col s12 m12">
             <h3 class="grey-text text-darken-3">Iowa State University</h3>
-            <h4 class="grey-text text-darken-3">B.S. Mechanical Engineering 2012</h4>
+            <h4 class="grey-text text-darken-3">B.S. Mechanical Engineering</h4>
             <h5 class="grey-text text-darken-3">Ames, IA</h5>
-            <h7 class="grey-text text-darken-3">Suma Cum Laude</h7>
+            <h7 class="grey-text text-darken-3">Suma Cum Laude (2012)</h7>
         </div>
       </div> 
         
@@ -91,7 +91,7 @@
     <div class="footer-copyright">
       <div class="container grey-text text-lighten-3">
       Made by <a class="grey-text text-darken-4" href="mailto:contact@clarkennis.com">Clark Ennis</a>
-          <a class="right grey-text text-lighten-3">2016</a>
+          <a class="right grey-text text-lighten-3">2016 - Berkeley, CA</a>
       </div>
     </div>
   </footer>
@@ -111,6 +111,38 @@
             });
             
         $('.carousel').carousel('next', [3]);
+            
+        $("#isu").click(function() {
+            
+            $("#educationcontent").empty();
+            //console.log("ISU Selected");
+            
+            $content = $('<div class="row"><div class="col s12 m12"><h3 class="grey-text text-darken-3">Iowa State University</h3><h4 class="grey-text text-darken-3">B.S. Mechanical Engineering</h4><h5 class="grey-text text-darken-3">Ames, IA</h5><h7 class="grey-text text-darken-3">Suma Cum Laude (2012)</h7></div></div><div class="row"><div class="col s12 m12"><ul><li style="list-style-type:circle">College of Engineering Dean’s List (Fall 2008, Spring 2009, Fall 2009, Fall 2010, Spring 2011, Fall 2011, Spring 2012, Fall 2012)</li><li style="list-style-type:circle">College of Engineering Undergraduate Merit Scholarship</li><li style="list-style-type:circle">Tau Beta Pi Scholarship</li><li style="list-style-type:circle">Margherita Tarr Estate Scholarship</li><li style="list-style-type:circle">Iowa Engineering Society’s Central Iowa Chapter Freshman Scholarship</li><li style="list-style-type:circle">Vernon Heath Scholarship</li><li style="list-style-type:circle">Iowa State University President’s Scholarship,</li><li style="list-style-type:circle">Roderick Seward, Flossie Ratcliffe & Helen M. Galloway Foundation Mechanical Engineering Scholarship</li><li style="list-style-type:circle">Tau Beta Pi – Mentor Scholarship</li></ul></div></div>');
+            
+            $("#educationcontent").hide().append($content).fadeIn(1000); 
+        });
+            
+        $("#jhu").click(function() {
+            
+            $("#educationcontent").empty();
+            //console.log("JHU Selected");
+            
+            $content = $('<div class="row"><div class="col s12 m12"><h3 class="grey-text text-darken-3">Johns Hopkins University</h3><h4 class="grey-text text-darken-3">PhD Student - Mechanical Engineering</h4><h5 class="grey-text text-darken-3">Baltimore, MD</h5><h7 class="grey-text text-darken-3">Attended 2013</h7></div></div><div class="row"><div class="col s12 m12"><ul><li style="list-style-type:circle">Mechanical Engineering Departmental Fellowship</li><li style="list-style-type:circle">Jay D. Samstag Fellowship</li></ul></div></div>');
+            
+            $("#educationcontent").hide().append($content).fadeIn(1000); 
+        });
+            
+        $("#nus").click(function() {
+            
+            $("#educationcontent").empty();
+            //console.log("JHU Selected");
+            
+            $content = $('<div class="row"><div class="col s12 m12"><h3 class="grey-text text-darken-3">National University of Singapore</h3><h4 class="grey-text text-darken-3">Engineering Study Abroad</h4><h5 class="grey-text text-darken-3">Singapore, SG</h5><h7 class="grey-text text-darken-3">January 2012 - May 2012</h7></div></div>');
+            
+            $("#educationcontent").hide().append($content).fadeIn(1000); 
+        });
+            
+        
 
         });
   </script>
