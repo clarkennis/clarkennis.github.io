@@ -113,7 +113,7 @@
             
         $('.carousel').carousel('next', [3]);
             
-        $("#isu").click(function() {
+        $("#isu").on('click touchstart', function() {
             
             $("#educationcontent").empty();
             //console.log("ISU Selected");
@@ -123,7 +123,7 @@
             $("#educationcontent").hide().append($content).fadeIn(1000); 
         });
             
-        $("#jhu").click(function() {
+        $("#jhu").on('click touchstart', function() {
             
             $("#educationcontent").empty();
             //console.log("JHU Selected");
@@ -133,7 +133,7 @@
             $("#educationcontent").hide().append($content).fadeIn(1000); 
         });
             
-        $("#nus").click(function() {
+        $("#nus").on('click touchstart', function() {
             
             $("#educationcontent").empty();
             //console.log("JHU Selected");
