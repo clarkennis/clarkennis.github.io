@@ -136,7 +136,7 @@
         $('.carousel').carousel('next', [3]);
             
             
-        $("#osi").click(function() {
+        $("#osi").on('click touchstart', function() {
             
             $("#jobcontent").empty();
             //console.log("OSIsoft Selected");
@@ -146,7 +146,7 @@
             $("#jobcontent").hide().append($content).fadeIn(1000);
         });
             
-        $("#jd").click(function() {
+        $("#jd").on('click touchstart', function() {
             
             $("#jobcontent").empty();
             //console.log("John Deere Selected");
@@ -156,7 +156,7 @@
             $("#jobcontent").hide().append($content).fadeIn(1000);  
         });
             
-        $("#cat").click(function() {
+        $("#cat").on('click touchstart', function() {
             
             $("#jobcontent").empty();
             //console.log("CAT Selected");
