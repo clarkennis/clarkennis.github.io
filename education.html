@@ -54,7 +54,7 @@
     <div class="parallax" style="height: 20px;"><img src="background1.jpg" alt="Unsplashed background img 1"></div>
   </div>
 
-  <div class="container">
+  <div class="container" id="educationcontentcontainer" style="min-height: 450px">
     <div class="section" id="educationcontent">
 
       <div class="row">
@@ -89,7 +89,7 @@
   </div>
 
   <footer class="page-footer teal">
-    <div class="footer-copyright">
+    <div class="footer-copyright teal">
       <div class="container grey-text text-lighten-3">
       Made by <a class="grey-text text-darken-4" href="mailto:contact@clarkennis.com">Clark Ennis</a>
           <a class="right grey-text text-lighten-3">2016 - Berkeley, CA</a>
@@ -101,6 +101,7 @@
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
+  <script src="js/attrchange.js"></script>
   <script src="js/init.js"></script>
     
   <script>
@@ -113,6 +114,38 @@
             
         $('.carousel').carousel('next', [3]);
             
+        var activeCarouselItemId = $('.carousel-item').filter(function(){ return $(this).css('z-index') == 0 }).attr("id");
+            
+        $('.carousel-item').attrchange({
+            trackValues: true, 
+            callback: function (e) {
+                //console.log(e);
+                if (e.attributeName == "style" && (e.newValue.indexOf("z-index: 0") != -1)){
+                    if (activeCarouselItemId != $(this).attr("id")){
+                        activeCarouselItemId = $(this).attr("id");
+                        updateJobDescriptionContent(activeCarouselItemId);
+                    }
+                }
+            }
+        });
+            
+        var updateJobDescriptionContent = function(id){
+            
+            $("#educationcontent").css("visibility", "hidden");
+            
+            if (id == "isu"){
+                $content = $('<div class="row"><div class="col s12 m12"><h3 class="grey-text text-darken-3">Iowa State University</h3><h4 class="grey-text text-darken-3">B.S. Mechanical Engineering</h4><h5 class="grey-text text-darken-3">Ames, IA</h5><h7 class="grey-text text-darken-3">Suma Cum Laude (2012)</h7></div></div><div class="row"><div class="col s12 m12"><ul><li style="list-style-type:circle">College of Engineering Dean’s List (Fall 2008, Spring 2009, Fall 2009, Fall 2010, Spring 2011, Fall 2011, Spring 2012, Fall 2012)</li><li style="list-style-type:circle">College of Engineering Undergraduate Merit Scholarship</li><li style="list-style-type:circle">Tau Beta Pi Scholarship</li><li style="list-style-type:circle">Margherita Tarr Estate Scholarship</li><li style="list-style-type:circle">Iowa Engineering Society’s Central Iowa Chapter Freshman Scholarship</li><li style="list-style-type:circle">Vernon Heath Scholarship</li><li style="list-style-type:circle">Iowa State University President’s Scholarship,</li><li style="list-style-type:circle">Roderick Seward, Flossie Ratcliffe & Helen M. Galloway Foundation Mechanical Engineering Scholarship</li><li style="list-style-type:circle">Tau Beta Pi – Mentor Scholarship</li></ul></div></div>');
+            } else if (id == "jhu"){
+                $content = $('<div class="row"><div class="col s12 m12"><h3 class="grey-text text-darken-3">Johns Hopkins University</h3><h4 class="grey-text text-darken-3">PhD Student - Mechanical Engineering</h4><h5 class="grey-text text-darken-3">Baltimore, MD</h5><h7 class="grey-text text-darken-3">Attended 2013</h7></div></div><div class="row"><div class="col s12 m12"><ul><li style="list-style-type:circle">Mechanical Engineering Departmental Fellowship</li><li style="list-style-type:circle">Jay D. Samstag Fellowship</li></ul></div></div>');
+            } else if (id == "nus"){
+                $content = $('<div class="row"><div class="col s12 m12"><h3 class="grey-text text-darken-3">National University of Singapore</h3><h4 class="grey-text text-darken-3">Engineering Study Abroad</h4><h5 class="grey-text text-darken-3">Singapore, SG</h5><h7 class="grey-text text-darken-3">January 2010 - May 2010</h7></div></div>');
+            }
+            
+            $("#educationcontent").html($content);
+            $("#educationcontent").css("visibility", "visible").hide().fadeIn(1000);
+        }
+        
+        /*
         $("#isu").on('click touchstart', function() {
             
             $("#educationcontent").empty();
@@ -142,7 +175,7 @@
             
             $("#educationcontent").hide().append($content).fadeIn(1000); 
         });
-            
+            */
         
 
         });
